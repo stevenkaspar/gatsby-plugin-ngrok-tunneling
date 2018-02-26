@@ -1,8 +1,12 @@
 {
-  "version": "1.0.1",
+  "version": "1.1.1",
   "name": "gatsby-plugin-ngrok-tunneling",
   "author": "Steven Kaspar <srkaspar@gmail.com>",
   "dependencies": {
     "minimist": "^1.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevenkaspar/gatsby-plugin-ngrok-tunneling.git"
   }
 }
