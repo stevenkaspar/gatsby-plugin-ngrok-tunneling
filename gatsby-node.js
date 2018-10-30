@@ -9,19 +9,10 @@ var DEFAULT_OPTIONS = {
 
 exports.onPreBootstrap = (_, options) => {
   var ngrokOptions = Object.assign({}, DEFAULT_OPTIONS, options !== undefined ? options : {});
-  return new Promise( (resolve, reject) => {
-    if ((process.env.TUNNELING === 'true' || process.env.NODE_ENV !== 'production') && process.env.TUNNELING !== 'false') {
-      ngrok.connect(ngrokOptions, (err, url) => {
-        if (err) {
-          return reject(err);
-        }
-        console.log(`
-${chalk.green('success')} tunneling available at => ${chalk.bold(url)}`);
-        resolve();
-      });
-    }
-    else {
-      resolve();
-    }
-  });
+  if ((process.env.TUNNELING === 'true' || process.env.NODE_ENV !== 'production') && process.env.TUNNELING !== 'false') {
+    return ngrok.connect(ngrokOptions)
+      .then(url => console.log(`
+      ${chalk.green('success')} tunneling available at => ${chalk.bold(url)}`))
+  }
+  return Promise.resolve()
 }
