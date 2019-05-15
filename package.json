@@ -9,5 +9,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/stevenkaspar/gatsby-plugin-ngrok-tunneling.git"
-  }
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "ngrok",
+    "tunneling",
+    "plugin"
+  ]
 }
